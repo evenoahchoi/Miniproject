@@ -94,7 +94,7 @@ public class AccountDao {
 	}
 	
 	
-	public int insert(AccountVo vo) {
+	public int insert(AccountVo vo) { //TODO: Ελΐε insert
 		// TODO Auto-generated method stub
 		int res = 0;
 

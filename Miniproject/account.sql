@@ -39,4 +39,8 @@ select * from member
 select * from type
 select * from list
 
+
+update account set acc_s='2022-12-12',acc_e='2022-12-12',type_idx=1 where acc_no='001-001-001'
+
+
 */
