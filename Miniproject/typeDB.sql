@@ -1,33 +1,26 @@
 /*
- 
- 
+  create sequence seq_type_idx
  
  --테이블 생성
- create table member
+ create table type
  (
- 	member_ID varchar2(100) not null, 
-	m_name varchar2(100) not null,  
-	m_pwd varchar2(100) not null, 
-	m_mail varchar2(100) not null,  
-	m_tel varchar2(100) not null,
-	m_addr varchar2(100) not null
+ 	type_idx int not null,
+ 	type varchar2(100) not null
  )
  
  --기본키
- alter table member
- 	add constraint member_ID primary key(member_ID);
+ alter table type
+ 	add constraint pk_type_idx primary key(type_idx);
 
  --Sample data
- insert into member values('Ilgildong','일길동','1111','111@naver.com','010-111-1111','서울');
- insert into member values('Egildong','이길동','2222','2222@naver.com','010-222-2222','대전');
- insert into member values('Samgildong','삼길동','3333','3333@naver.com','010-333-333','대구');
- insert into member values('Sagildong','사길동','4444','4444@naver.com','010-444-4444','부산');
-   
+ insert into type values(seq_type_idx.nextVal,'보통예금');
+ insert into type values(seq_type_idx.nextVal,'정기적금');
+ insert into type values(seq_type_idx.nextVal,'정기예금');
+
  commit
  
-update member set m_addr='서울' where member_ID='Ilgildong';  
 
-select * from member
+select * from type
 
 
 */

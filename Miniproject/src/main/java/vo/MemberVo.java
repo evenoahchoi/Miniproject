@@ -8,6 +8,15 @@ public class MemberVo {
 	private String m_mail;
 	private String m_tel;
 	private String m_addr;
+	private String acc_no;
+
+	public String getAcc_no() {
+		return acc_no;
+	}
+
+	public void setAcc_no(String acc_no) {
+		this.acc_no = acc_no;
+	}
 
 	public String getMember_ID() {
 		return member_ID;
