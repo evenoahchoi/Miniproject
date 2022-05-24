@@ -44,7 +44,7 @@
 			return;
 		}
 		//아이디 유효성 검사
-		 var idRegCheck = /^[a-zA-z0-9]{1,10}$/; 
+		 var idRegCheck = /^[a-zA-Z0-9]{1,10}$/; 
 
 		if(!idRegCheck.test(member_ID)){
 			alert('ID는 영문자와 숫자 1~10자리로 입력하실 수 있습니다.');
@@ -77,6 +77,7 @@
 			return;
 		}
 		
+		var korRegCheck = /[ㄱ-ㅎㅏ-ㅣ가-힣]/;
 		
 		//이름 체크
 		if (m_name == '') {
@@ -86,37 +87,103 @@
 			return;
 		}
 		
-
+		if(!korRegCheck.test(m_name)){
+			alert('이름은 한글만 입력가능합니다.');
+			f.m_name.value = '';
+			f.m_name.focus();
+			return;
+		}
 		
-		var telRegCheck = /%d/;
+		
+	
+		if(email1 == ''){
+			alert('메일를 주소를 입력하세요.');
+			f.email1.value = '';
+			f.email1.focus();
+			return;
+		}
+		
+		var mailRegCheck = /^[a-zA-Z0-9]{1,}$/; 
+		
+		
+		if(!mailRegCheck.test(email1)){
+			alert('메일은 영문자와 숫자로만 입력 가능합니다.');
+			f.email1.value = '';
+			f.email1.focus();
+			return;
+		}
+		
+		
+		
+		if(email2 == ''){
+			alert('메일를 주소를 끝까지 입력하세요.');
+			f.email2.value = '';
+			f.email2.focus();
+			return;
+		}
+		
+		
+		if(!mailRegCheck.test(email2)){
+			alert('메일은 영문자와 숫자로만 입력 가능합니다.');
+			f.email2.value = '';
+			f.email2.focus();
+			return;
+		}
+
+		var telRegCheck = /\d{3}/;
+		var telRegCheck2 = /\d{4}/;
 		
 		//전화번호 입력 체크
-		if (m_tel1 == '') {
+		if (tel1 == '') {
 			alert('첫번째 전화번호를 입력하세요.');
-			f.m_tel1.value = '';
-			f.m_tel1.focus();
+			f.tel1.value = '';
+			f.tel1.focus();
 			return;
-			
-		if(!teRegCheck.test(tel1)){
-			alert('숫자만 입력 가능합니다.');
-			f.m_tel2.value = '';
-			f.m_tel2.focus();
-		}
-			
+
 			
 		}
-		if (m_tel2 == '') {
+		
+		if (!telRegCheck.test(tel1)) {
+			alert('3자리 숫자만 입력하세요');
+			f.tel1.value = '';
+			f.tel1.focus();
+			return;
+		}
+		
+		// 2번째
+		if (tel2 == '') {
 			alert('두번째 전화번호를 입력하세요.');
-			f.m_tel2.value = '';
-			f.m_tel2.focus();
+			f.tel2.value = '';
+			f.tel2.focus();
+			return;
+
+			
+		}
+		
+		if (!telRegCheck2.test(tel2)) {
+			alert('4자리 숫자만 입력하세요');
+			f.tel2.value = '';
+			f.tel2.focus();
 			return;
 		}
-		if (m_tel3 == '') {
+
+		// 3번째
+		if (tel3 == '') {
 			alert('세번째 전화번호를 입력하세요.');
-			f.m_tel3.value = '';
-			f.m_tel3.focus();
+			f.tel3.value = '';
+			f.tel3.focus();
+			return;
+
+			
+		}
+		
+		if (!telRegCheck2.test(tel3)) {
+			alert('4자리 숫자만 입력하세요');
+			f.tel3.value = '';
+			f.tel3.focus();
 			return;
 		}
+		
 		// ===================================================
 		//전송방식
 		f.method = "GET";
