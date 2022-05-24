@@ -1,0 +1,31 @@
+@charset "UTF-8";
+
+#header_menu {
+	margin: 0px;
+}
+
+#header_menu>li {
+	display: inline-block;
+	list-style: none;
+}
+
+#header_menu>li>a {
+	text-decoration: none;
+}
+
+#main_menu {
+	list-style: none;
+}
+
+#main_menu>li {
+	display: inline-block;
+	margin-top: 40px;
+	margin-left: 15px;
+	font-size: 50px;
+	text-align: center;
+	list-style-type: none;
+}
+
+#main_menu>li>a {
+	text-decoration: none;
+}

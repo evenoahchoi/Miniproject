@@ -130,8 +130,8 @@
 			return;
 		}
 
-		var telRegCheck = /\d{3}/;
-		var telRegCheck2 = /\d{4}/;
+ 		var telRegCheck = /[0-9]{3}/;
+		var telRegCheck2 = /[0-9]{4}/;
 		
 		//전화번호 입력 체크
 		if (tel1 == '') {
@@ -257,6 +257,7 @@
 						</tr>
 
 						<tr>
+						<!-- 최종적으로 type을 password로 바꿀예정 지금은 개발중이라 text -->
 							<th><input type="text" class="form-control" name="m_pwd"
 								style="margin-bottom: 10px;"></th>
 						</tr>
@@ -306,11 +307,11 @@
 						</tr>
 						<tr>
 							<th>
-							<input type="text" class="form-control" name="tel1" id="tel">
+							<input maxlength="3" type="text" class="form-control" name="tel1" id="tel">
 							-
-							<input type="text" class="form-control" name="tel2" id="tel">
+							<input maxlength="4" type="text" class="form-control" name="tel2" id="tel">
 							-
-							<input type="text" class="form-control" name="tel3" id="tel">
+							<input maxlength="4" type="text" class="form-control" name="tel3" id="tel">
 							</th>
 						</tr>
 
