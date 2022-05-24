@@ -24,6 +24,7 @@ public class SignUp extends HttpServlet {
 		//GET방식이든 POST방식이던 다 받을 수 있게
 		request.setCharacterEncoding("UTF-8");
 		
+		//parameter
 		String member_ID = request.getParameter("member_ID");
 		
 		

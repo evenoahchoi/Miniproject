@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+
+#main_box{
+	
+	height: 800px;
+	width: 1200px;
+	margin: auto;
+}
+
+#header_upper{
+
+	height: 20px;
+	
+	/* background: #ffffcc; */
+}
+
+#header_lower{
+
+	height: 150px;
+	width: 70%;
+	float: left;
+	
+	/* background: #ccccff; */
+}
+
+#header_lower2{
+
+	height: 150px;
+	width: 30%;
+	float : left;	
+
+	background: #cccccc;
+}
+
+#content{
+	
+	clear:both;
+	height: 600px;
+	background: #ccffcc;
+	
+}
+
+
+#main{
+	background: #ccffff;
+	height: 700px;
+}
+
+
+#footer{
+	
+
+	height: 100px;
+
+	background: gray;
+}
