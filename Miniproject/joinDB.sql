@@ -34,5 +34,5 @@ full outer join list l
 	on l.acc_no = a.acc_no
 order by m.member_ID
 
-
+select * from full_view
 */
