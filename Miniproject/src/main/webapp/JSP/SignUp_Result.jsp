@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-
+<p>${ requestScope.member_ID }</p>
 </body>
 </html>
