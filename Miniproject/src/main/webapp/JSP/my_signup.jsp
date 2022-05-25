@@ -132,8 +132,8 @@
 			return;
 		}
 
- 		var telRegCheck = /[0-9]{3}/;
-		var telRegCheck2 = /[0-9]{4}/;
+ 		var telRegCheck = /^[0-9]{3}$/;
+		var telRegCheck2 = /^[0-9]{4}$/;
 		
 		//전화번호 입력 체크
 		if (tel1 == '') {

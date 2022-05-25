@@ -7,6 +7,7 @@
 #header_menu>li {
 	display: inline-block;
 	list-style: none;
+	margin-right: 20px;
 }
 
 #header_menu>li>a {

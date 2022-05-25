@@ -15,16 +15,10 @@
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
+<script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+
 <script type="text/javascript">
-	
-	
 
-	function page_signup() {
-
-		window.location.href='my_signup.jsp';
-
-	}
-	
 	function login(f){
 		
 		var member_ID = f.member_ID.value.trim();
@@ -53,7 +47,14 @@
 	}
 
 
-	
+
+	$(function() {
+		$("#signup").click(function() {
+
+			window.location.href = 'my_signup.jsp';
+
+		})
+	});
 </script>
 
 <style type="text/css">
@@ -96,9 +97,9 @@
 								id="input_box"></th>
 						</tr>
 						<tr>
-							<th><button class="w3-button w3-blue"
+							<th><button type="button" class="w3-button w3-blue"
 									onclick="login(this.form);">로그인</button>
-								<a href="my_signup.jsp"><button class="w3-button w3-blue">회원가입</button></a></th>
+								<button type="button" class="w3-button w3-blue" id="signup">회원가입</button></th>
 						</tr>
 					</table>
 				</form>

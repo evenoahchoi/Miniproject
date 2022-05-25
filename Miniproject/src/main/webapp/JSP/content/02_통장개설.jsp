@@ -7,15 +7,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 	
-	<ul id="main_menu">
-		<li ><a href="01_accountcheck.jsp">예금조회</a></li>
-		<li ><a href="02_accountmake.jsp">계좌신설</a></li>
-	</ul>
-
-
-
-
+	
+	
 </body>
 </html>
