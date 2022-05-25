@@ -26,9 +26,11 @@
 		</div>
 		<hr>
 		<div id="content">
+			<div id="content1"></div>
 			<div>
-				
+				<%@ include file="content/02_통장개설.jsp" %> 
 			</div>
+			
 		</div>		
 		<div id="footer">footer</div>		
 	</div>
