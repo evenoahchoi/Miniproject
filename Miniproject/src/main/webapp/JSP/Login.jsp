@@ -21,7 +21,7 @@
 
 	function page_signup() {
 
-		window.location.href = '../HTML/my_signup.html';
+		window.location.href='my_signup.jsp';
 
 	}
 	
@@ -52,6 +52,8 @@
 
 	}
 
+
+	
 </script>
 
 <style type="text/css">
@@ -96,7 +98,7 @@
 						<tr>
 							<th><button class="w3-button w3-blue"
 									onclick="login(this.form);">로그인</button>
-								<button class="w3-button w3-blue" onclick="page_signup();">회원가입</button></th>
+								<a href="my_signup.jsp"><button class="w3-button w3-blue">회원가입</button></a></th>
 						</tr>
 					</table>
 				</form>

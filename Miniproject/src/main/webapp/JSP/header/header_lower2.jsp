@@ -15,7 +15,7 @@
 </head>
 <body>
 	
-	<a href="home.jsp"><img  src="../img/img1.png" onclick="home();"></a>
+	<a href="index.jsp"><img  src="../img/img1.png" ></a>
 	
 </body>
 </html>
