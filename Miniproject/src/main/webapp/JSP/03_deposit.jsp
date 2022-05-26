@@ -15,7 +15,6 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
 
-
 <link rel="stylesheet" href="../css/main.css">
 <link rel="stylesheet" href="../css/menu.css">
 
@@ -35,9 +34,8 @@
 		<hr>
 		<div id="content">
 			<div id="content1"></div>
-			
 			<div>
-			<%@ include file="content/01_메인화면.jsp" %>
+				<%@ include file="content/03_입금.jsp" %> 
 			</div>
 			
 		</div>		
