@@ -1,6 +1,7 @@
 package action;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,8 +13,8 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class member
  */
-@WebServlet("/sign_up.do")
-public class SignUp extends HttpServlet {
+@WebServlet("/JSP/index.do")
+public class MainIndexAction extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -21,18 +22,19 @@ public class SignUp extends HttpServlet {
 	 */
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
+		
 		//GET방식이든 POST방식이던 다 받을 수 있게
 		request.setCharacterEncoding("UTF-8");
 		
-		//parameter
-		String member_ID = request.getParameter("member_ID");
+		
+		List list = null;
 		
 		
 		// binding
-		request.setAttribute("member_ID", member_ID);
+		request.setAttribute("list", list);
 		
 		// forward
-		RequestDispatcher disp = request.getRequestDispatcher("JSP/SignUp_Result.jsp");
+		RequestDispatcher disp = request.getRequestDispatcher("JSP/index.jsp");
 		disp.forward(request, response);
 		
 	}

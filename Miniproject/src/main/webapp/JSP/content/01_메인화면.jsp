@@ -23,7 +23,9 @@
 <style type="text/css">
 	#table_box{
 		margin-top: 80px;
+		margin-left: 150px;
 		height: 80%;
+
 	}
 	th, td{
 		text-align: center;

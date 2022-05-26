@@ -31,8 +31,8 @@
 		<div id="header_lower2">
 		<%@ include file="header/header_lower2.jsp" %>
 		</div>
-		<hr>
 		<div id="content">
+		<hr>
 			<div id="content1"></div>
 			<div>
 				<%@ include file="content/04_출금.jsp" %> 
