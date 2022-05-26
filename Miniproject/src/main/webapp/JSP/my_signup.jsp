@@ -188,9 +188,9 @@
 		
 		// ===================================================
 		//전송방식
-		f.method = "GET";
 		
-		f.action = "../sign_up.do";
+		
+		f.action = "sign_up.do";
 		
 		//전송
 		f.submit();
@@ -206,6 +206,7 @@
 			}
 		})
 	});
+	
 </script>
 
 <style type="text/css">

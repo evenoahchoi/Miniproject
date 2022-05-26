@@ -5,17 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-
-
-
-<style type="text/css">
-
-</style>
-
 </head>
 <body>
-	
-	<img onclick="location.href='index.do'" src="../img/img1.png" >
-	
+예금 조회 컨텐츠 넣어야합니다.
 </body>
 </html>

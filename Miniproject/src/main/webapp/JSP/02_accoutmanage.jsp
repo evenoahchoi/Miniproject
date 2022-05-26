@@ -36,7 +36,7 @@
 		<hr>
 			<div id="content1"></div>
 			<div>
-				<%@ include file="content/02_통장개설.jsp" %> 
+				<%@ include file="content/02_계좌관리.jsp" %> 
 			</div>
 			
 		</div>		
