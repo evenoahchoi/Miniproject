@@ -9,6 +9,20 @@ public class MemberVo {
 	private String m_tel;
 	private String m_addr;
 	private String acc_no;
+	
+	public MemberVo() {
+	
+	}
+	
+	public MemberVo(String member_ID, String m_name, String m_pwd, String m_mail, String m_tel, String m_addr) {
+		super();
+		this.member_ID = member_ID;
+		this.m_name    = m_name;
+		this.m_pwd     = m_pwd;
+		this.m_mail    = m_mail;
+		this.m_tel     = m_tel;
+		this.m_addr    = m_addr;
+	}
 
 	public String getAcc_no() {
 		return acc_no;
