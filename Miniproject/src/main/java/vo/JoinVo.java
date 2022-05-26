@@ -10,17 +10,19 @@ public class JoinVo {
 	private String m_addr;
 	private String a_acc_no;
 	private String a_member_ID;
-	private int a_type_idx;
+	private String type;
 	private String acc_s;
 	private String acc_e;
-	private int list_idx;
-	private int list_in;
-	private int list_out;
-	private int list_jan;
 	private String list_date;
 	private String l_acc_no;
-	private int t_type_idx;
-	private String type;
+	
+	private int    a_type_idx;
+	private int    list_idx;
+	private int    list_in;
+	private int    list_out;
+	private int    list_jan;
+	private int    t_type_idx;
+	
 	
 	
 	public String getM_member_ID() {
