@@ -8,6 +8,18 @@
 <meta charset="UTF-8">
 <title>통장조회</title>
 
+<script type="text/javascript">
+
+	function ipp() {
+		location.href="03_deposit.jsp";
+	}
+	function chul() {
+		location.href="04_withdraw.jsp";
+	}
+
+
+</script>
+
 <style type="text/css">
 	#table_box{
 		margin-top: 80px;
@@ -37,9 +49,9 @@
 							<span style="color: red;">데이터가 존재하지 않습니다.</span>
 						</td>
 					</tr>
-				</c:if> --%>
+				</c:if> 
 				
-				<%-- <c:forEach var="vo" items="${ list }"> --%>
+				<c:forEach var="vo" items="${ list }"> --%>
 				<tr>
 					<td>더미 데이터</td>	
 					<td>더미 데이터</td>	
@@ -49,9 +61,9 @@
 
 					<td>
 						<input class="btn btn-info" type="button" value="입금" 
-						onclick="ipp('');">
+						onclick="ipp();">
 						<input class="btn btn-danger" type="button" value="출금" 
-						onclick="chul('');">
+						onclick="chul();">
 					</td>
 				</tr>
 				

@@ -1,0 +1,40 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+</head>
+<body>
+	<!-- update -->
+
+
+	<form>
+		<div id="box"></div>
+		<table class="table table-striped">
+
+			<tr>
+				<th>현재 잔액</th>
+				<td><input style="text-align: right;" type="text"
+					name="list_jan" value="0" disabled="disabled"></td>
+			</tr>
+			<tr>
+				<th>출금하실 금액</th>
+				<td><input type="text" name="minus" value=""></td>
+			</tr>
+
+
+			<tr>
+
+				<td colspan="2" align="center"><input type="button" value="출금"
+					onclick="modify(this.form);"> <input type="button"
+					value="취소" onclick="location.href='index.jsp'"></td>
+			</tr>
+		</table>
+
+
+	</form>
+</body>
+</html>
