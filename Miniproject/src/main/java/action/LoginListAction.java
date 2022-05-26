@@ -25,15 +25,14 @@ public class LoginListAction extends HttpServlet {
 		
 		//1. Parameter 얻어오기
 		String id   = request.getParameter("member_ID");
-		String pwd = request.getParameter("m_pwd");
+		String pwd  = request.getParameter("m_pwd");
 		
 		//2. request binding
 		request.setAttribute("id", id);
 		request.setAttribute("pwd", pwd);
 		
 		//3. Dispatcher forward
-		RequestDispatcher disp = request.getRequestDispatcher("login_list.jsp");
+		RequestDispatcher disp = request.getRequestDispatcher("index.jsp");
 		disp.forward(request, response);
-	
 	}
 }

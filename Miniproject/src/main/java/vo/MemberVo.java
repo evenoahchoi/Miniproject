@@ -7,21 +7,19 @@ public class MemberVo {
 	private String m_pwd;
 	private String m_mail;
 	private String m_tel;
-	private String m_addr;
 	private String acc_no;
 	
 	public MemberVo() {
 	
 	}
 	
-	public MemberVo(String member_ID, String m_name, String m_pwd, String m_mail, String m_tel, String m_addr) {
+	public MemberVo(String member_ID, String m_name, String m_pwd, String m_mail, String m_tel) {
 		super();
 		this.member_ID = member_ID;
-		this.m_name    = m_name;
 		this.m_pwd     = m_pwd;
+		this.m_name    = m_name;
 		this.m_mail    = m_mail;
 		this.m_tel     = m_tel;
-		this.m_addr    = m_addr;
 	}
 
 	public String getAcc_no() {
@@ -70,14 +68,6 @@ public class MemberVo {
 
 	public void setM_tel(String m_tel) {
 		this.m_tel = m_tel;
-	}
-
-	public String getM_addr() {
-		return m_addr;
-	}
-
-	public void setM_addr(String m_addr) {
-		this.m_addr = m_addr;
 	}
 
 }

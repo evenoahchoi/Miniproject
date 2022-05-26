@@ -50,13 +50,11 @@ public class MemberDao {
 			//4.포장(record->Vo->List)
 			while (rs.next()) {
 				//rs가 가리키는 행(레코드)의 값을 읽어오기
-				String member_ID  = rs.getString("member_ID");
-				String m_name   = rs.getString("m_name");
-				String m_pwd   = rs.getString("m_pwd");
-				String m_mail   = rs.getString("m_mail");
-				String m_tel   = rs.getString("m_tel");
-				String m_addr   = rs.getString("m_addr");
-				
+				String member_ID = rs.getString("member_ID");
+				String m_name    = rs.getString("m_name");
+				String m_pwd     = rs.getString("m_pwd");
+				String m_mail    = rs.getString("m_mail");
+				String m_tel     = rs.getString("m_tel");
 				
 				//Vo로 포장
 				MemberVo vo = new MemberVo();
@@ -65,11 +63,9 @@ public class MemberDao {
 				vo.setM_pwd(m_pwd);
 				vo.setM_mail(m_mail);
 				vo.setM_tel(m_tel);
-				vo.setM_addr(m_addr);
 
 				//list추가
 				list.add(vo);
-
 			}
 
 		} catch (Exception e) {
@@ -97,13 +93,12 @@ public class MemberDao {
 	
 	
 	public int insert(MemberVo vo) {
-		// TODO Auto-generated method stub
 		int res = 0;
 
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		// 1 2 3 4<-parameter index
-		String sql = "insert into member values(?,?,?,?,?,?)";
+		String sql = "insert into member values(?,?,?,?,?)";
 
 		try {
 			// 1.Connection얻어오기
@@ -118,7 +113,6 @@ public class MemberDao {
 			pstmt.setString(3, vo.getM_pwd());
 			pstmt.setString(4, vo.getM_mail());
 			pstmt.setString(5, vo.getM_tel());
-			pstmt.setString(6, vo.getM_addr());
 
 			// 4.insert : res<-처리된 행수반환
 			res = pstmt.executeUpdate();
@@ -192,7 +186,7 @@ public class MemberDao {
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		//                            
-		String sql = "update member set m_name=?,m_pwd=?,m_mail=?,m_tel=?,m_addr=? where member_ID=?";
+		String sql = "update member set m_name=?,m_pwd=?,m_mail=?,m_tel=? where member_ID=?";
 		
 		try {
 			// 1.Connection얻어오기
@@ -206,8 +200,7 @@ public class MemberDao {
 			pstmt.setString(2, vo.getM_pwd());
 			pstmt.setString(3, vo.getM_mail());
 			pstmt.setString(4, vo.getM_tel());
-			pstmt.setString(5, vo.getM_addr());
-			pstmt.setString(6, vo.getMember_ID());
+			pstmt.setString(5, vo.getMember_ID());
 			
 			// 4.DML(insert,update,delete) : res<-처리된 행수반환
 			res = pstmt.executeUpdate();
@@ -232,6 +225,3 @@ public class MemberDao {
 		
 	}
 }
-
-	
-

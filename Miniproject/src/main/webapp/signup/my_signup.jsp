@@ -29,14 +29,14 @@
 
 		//필수 입력 항목
 		var member_ID = f.member_ID.value.trim();
-		var m_name = f.m_name.value.trim();
-		var m_pwd = f.m_pwd.value.trim();
+		var m_name    = f.m_name.value.trim();
+		var m_pwd     = f.m_pwd.value.trim();
 		var pwd_check = f.pwd_check.value.trim();
-		var email1 = f.email1.value.trim();
-		var email2 = f.email2.value.trim();
-		var tel1 = f.tel1.value.trim();
-		var tel2 = f.tel2.value.trim();
-		var tel3 = f.tel3.value.trim();
+		var email1    = f.email1.value.trim();
+		var email2    = f.email2.value.trim();
+		var tel1      = f.tel1.value.trim();
+		var tel2      = f.tel2.value.trim();
+		var tel3      = f.tel3.value.trim();
 		
 		//아이디 체크
 		if (member_ID == '') {
@@ -189,12 +189,10 @@
 		// ===================================================
 		//전송방식
 		
-		
 		f.action = "sign_up.do";
 		
 		//전송
 		f.submit();
-
 	}
 
 	$(function() {
@@ -229,9 +227,6 @@
 		width: 29%; 
 		text-align: center;
 	}
-	
-
-
 
 </style>
 
