@@ -24,7 +24,8 @@
 	
 	<div id="main_box">
 		<div id="header_upper">
-		<%@ include file="header/header_upper.jsp" %><hr>
+		<%@ include file="header/header_upper.jsp" %>
+		<hr>
 		</div>	
 		<div id="header_lower">
 		<%@ include file="header/header_lower.jsp" %>
@@ -32,8 +33,8 @@
 		<div id="header_lower2">
 		<%@ include file="header/header_lower2.jsp" %>
 		</div>
-		<hr>
 		<div id="content">
+		<hr>
 			<div id="content1"></div>
 			
 			<div>
