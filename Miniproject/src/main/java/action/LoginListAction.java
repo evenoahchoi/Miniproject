@@ -32,7 +32,7 @@ public class LoginListAction extends HttpServlet {
 		request.setAttribute("pwd", pwd);
 		
 		//3. Dispatcher forward
-		RequestDispatcher disp = request.getRequestDispatcher("index.jsp");
+		RequestDispatcher disp = request.getRequestDispatcher("../JSP/index.jsp");
 		disp.forward(request, response);
 	}
 }

@@ -16,8 +16,8 @@
 
 	
 	<ul id="header_menu">
-		<li><a href="my_signup.jsp">회원가입</a></li>
-		<li><a href="Login.jsp">로그인</a></li>
+		<li><a href="../join/join.jsp">회원가입</a></li>
+		<li><a href="../login/login.jsp">로그인</a></li>
 	</ul>
 		
 
