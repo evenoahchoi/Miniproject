@@ -35,7 +35,7 @@
 		<hr>
 			<div id="content1"></div>
 			<div>
-				<%-- <%@ include file="#" %>  --%>
+				<%@ include file="content/05_예금조회.jsp" %> 
 			</div>
 			
 		</div>		

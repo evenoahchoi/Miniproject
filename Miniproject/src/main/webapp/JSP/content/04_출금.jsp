@@ -18,7 +18,7 @@
 			<tr>
 				<th>현재 잔액</th>
 				<td><input style="text-align: right;" type="text"
-					name="list_jan" value="0" disabled="disabled"></td>
+					name="list_jan" value="0" readonly="readonly"></td>
 			</tr>
 			<tr>
 				<th>출금하실 금액</th>
@@ -30,7 +30,7 @@
 
 				<td colspan="2" align="center"><input type="button" value="출금"
 					onclick="modify(this.form);"> <input type="button"
-					value="취소" onclick="location.href='index.jsp'"></td>
+					value="취소" onclick="location.href='index.do'"></td>
 			</tr>
 		</table>
 

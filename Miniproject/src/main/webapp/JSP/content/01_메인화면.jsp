@@ -45,7 +45,7 @@
 					<th width="10%">잔액</th>
 				</tr>
 				
-<%-- 				<c:if test="${ empty list }">
+				<c:if test="${ empty list }">
 					<tr>
 						<td colspan="5" align="center">
 							<span style="color: red;">데이터가 존재하지 않습니다.</span>
@@ -53,7 +53,7 @@
 					</tr>
 				</c:if> 
 				
-				<c:forEach var="vo" items="${ list }"> --%>
+				<c:forEach var="vo" items="${ list }">
 				<tr>
 					<td>더미 데이터</td>	
 					<td>더미 데이터</td>	
@@ -70,7 +70,7 @@
 				</tr>
 				
 				
-				<%-- </c:forEach> --%>
+				</c:forEach>
 				
 			</table>
 

@@ -40,8 +40,8 @@
 		
 		f.method = "GET";
 		
-		f.action = "../login.do";
-		
+		f.action = "login.do";
+
 		f.submit();
 
 	}
