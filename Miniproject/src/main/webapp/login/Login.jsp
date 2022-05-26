@@ -22,7 +22,7 @@
 	function login(f){
 		
 		var member_ID = f.member_ID.value.trim();
-		var m_pwd = f.m_pwd.value.trim();
+		var m_pwd     = f.m_pwd.value.trim();
 		
 		if(member_ID==''){
 			alert("ID를 입력하세요.");
