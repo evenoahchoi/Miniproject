@@ -9,6 +9,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import dao.MemberDao;
+import vo.MemberVo;
+
 /**
  * Servlet implementation class LoginListAction
  */
@@ -20,19 +23,27 @@ public class LoginListAction extends HttpServlet {
 	
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		//0. 인코딩방식 설정
-		request.setCharacterEncoding("utf-8");
+		//Parameter 얻어오기
+		String member_ID = request.getParameter("member_ID");
 		
-		//1. Parameter 얻어오기
-		String id   = request.getParameter("member_ID");
-		String pwd  = request.getParameter("m_pwd");
+		//member_ID에 해당되는 vo 1건 얻어오기
+		MemberVo vo = MemberDao.getInstance().selectOne_Login(member_ID);
 		
-		//2. request binding
-		request.setAttribute("id", id);
-		request.setAttribute("pwd", pwd);
+		//request binding
+		request.setAttribute("vo", vo);
 		
-		//3. Dispatcher forward
-		RequestDispatcher disp = request.getRequestDispatcher("../JSP/index.jsp");
-		disp.forward(request, response);
+		//로그인 실패시
+		if(vo==null) {
+			
+			RequestDispatcher disp = request.getRequestDispatcher("../login/failLogin.jsp");
+			disp.forward(request, response);
+			
+		}else { //로그인 성공시
+			
+			RequestDispatcher disp = request.getRequestDispatcher("../JSP/index.jsp");
+			disp.forward(request, response);
+		
+		}
+		
 	}
 }

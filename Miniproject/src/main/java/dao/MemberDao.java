@@ -28,25 +28,25 @@ public class MemberDao {
 		
 	}
 
+	
+	//회원 전체조회
 	public List<MemberVo> selectList() {
 
 		List<MemberVo> list = new ArrayList<MemberVo>();
 
-		Connection conn = null;
+		Connection        conn  = null;
 		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+		ResultSet         rs    = null;
+		
 		String sql = "select * from member";
 
 		try {
 			//1.Connection 얻어오기
 			conn = DBService.getInstance().getConnection();
-
 			//2.PreparedStatment얻어오기
 			pstmt = conn.prepareStatement(sql);
-
 			//3.ResultSet얻어오기
 			rs = pstmt.executeQuery();
-
 			//4.포장(record->Vo->List)
 			while (rs.next()) {
 				//rs가 가리키는 행(레코드)의 값을 읽어오기
@@ -55,7 +55,6 @@ public class MemberDao {
 				String m_pwd     = rs.getString("m_pwd");
 				String m_mail    = rs.getString("m_mail");
 				String m_tel     = rs.getString("m_tel");
-				
 				//Vo로 포장
 				MemberVo vo = new MemberVo();
 				vo.setMember_ID(member_ID);
@@ -63,18 +62,14 @@ public class MemberDao {
 				vo.setM_pwd(m_pwd);
 				vo.setM_mail(m_mail);
 				vo.setM_tel(m_tel);
-
 				//list추가
 				list.add(vo);
 			}
 
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 		} finally {
-
 			try {
-				//연결되어있으면 닫아라
 				if (rs != null)
 					rs.close(); //3번째
 				if (pstmt != null)
@@ -82,16 +77,59 @@ public class MemberDao {
 				if (conn != null)
 					conn.close(); //1번째
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
 		}
-
 		return list;
 	}
 	
+	//idx로 조회
+	//idx에 해당되는 객체 1건 구하기
+	public MemberVo selectOne_Login(String member_ID) {
+
+		MemberVo vo = null;
+
+		Connection        conn  = null;
+		PreparedStatement pstmt = null;
+		ResultSet         rs    = null;
+
+		String sql = "select * from member where member_ID=?";
+
+		try {
+			conn  = DBService.getInstance().getConnection();
+			pstmt = conn.prepareStatement(sql);
+			//Parameter index setting
+			pstmt.setString(1, member_ID);
+			
+			rs = pstmt.executeQuery();
+			//member_ID는 기본키이기 때문에, 조회가 되거나/안 되거나이기때문에 처리할 행 수는 1 or 0
+			if (rs.next()) {
+				
+				vo = new MemberVo();
+				
+				vo.setMember_ID(rs.getString("member_ID"));
+				vo.setM_pwd(rs.getString("m_pwd"));
+				
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (rs != null)
+					rs.close();
+				if (pstmt != null)
+					pstmt.close();
+				if (conn != null)
+					conn.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return vo;
+	}
 	
+	
+	//insert
 	public int insert(MemberVo vo) {
 		
 		int res = 0;
@@ -100,48 +138,42 @@ public class MemberDao {
 		PreparedStatement pstmt = null;
 		// 1 2 3 4<-parameter index
 		String sql = "insert into member values(?,?,?,?,?)";
-
 		try {
 			// 1.Connection얻어오기
 			conn = DBService.getInstance().getConnection();
-
 			// 2.PreparedStatement얻어오기
 			pstmt = conn.prepareStatement(sql);
-
 			// 3.pstmt parameter 설정
 			pstmt.setString(1, vo.getMember_ID());
 			pstmt.setString(2, vo.getM_name());
 			pstmt.setString(3, vo.getM_pwd());
 			pstmt.setString(4, vo.getM_mail());
 			pstmt.setString(5, vo.getM_tel());
-
 			// 4.insert : res<-처리된 행수반환
 			res = pstmt.executeUpdate();
 
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 		} finally {
-
 			try {
 				if (pstmt != null)
 					pstmt.close();
 				if (conn != null)
 					conn.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
 		return res;
-	}
+	}//insert() end
 	
 	
+	//delete
 	public int delete(String member_ID) {
-		// TODO Auto-generated method stub
+
 		int res = 0;
 
-		Connection conn = null;
+		Connection        conn  = null;
 		PreparedStatement pstmt = null;
 
 		String sql = "delete from member where member_ID=?";
@@ -149,52 +181,45 @@ public class MemberDao {
 		try {
 			// 1.Connection얻어오기
 			conn = DBService.getInstance().getConnection();
-
 			// 2.PreparedStatement얻어오기
 			pstmt = conn.prepareStatement(sql);
-
 			// 3.pstmt parameter 설정
 			pstmt.setString(1, member_ID);
-
 			// 4.DML(insert,update,delete) : res<-처리된 행수반환
 			res = pstmt.executeUpdate();
 
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 		} finally {
-
 			try {
 				if (pstmt != null)
 					pstmt.close();
 				if (conn != null)
 					conn.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-
 		return res;
-
-	}
+	}//delete() end
 	
+	
+	
+	//update
 	public int update(MemberVo vo) {
-		// TODO Auto-generated method stub
+		
 		int res = 0;
 		
-		Connection conn = null;
+		Connection        conn  = null;
 		PreparedStatement pstmt = null;
-		//                            
+		
 		String sql = "update member set m_name=?,m_pwd=?,m_mail=?,m_tel=? where member_ID=?";
 		
 		try {
 			// 1.Connection얻어오기
 			conn = DBService.getInstance().getConnection();
-			
 			// 2.PreparedStatement얻어오기
 			pstmt = conn.prepareStatement(sql);
-			
 			// 3.pstmt parameter 설정
 			pstmt.setString(1, vo.getM_name());
 			pstmt.setString(2, vo.getM_pwd());
@@ -206,7 +231,6 @@ public class MemberDao {
 			res = pstmt.executeUpdate();
 			
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 		} finally {
 			
@@ -216,12 +240,9 @@ public class MemberDao {
 				if (conn != null)
 					conn.close();
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-		
 		return res;
-		
-	}
+	}//update() end
 }
