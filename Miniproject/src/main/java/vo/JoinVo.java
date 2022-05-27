@@ -23,8 +23,26 @@ public class JoinVo {
 	private int    list_jan;
 	private int    t_type_idx;
 	
+	public JoinVo(){
+		
+	}
 	
-	
+	public JoinVo(String a_acc_no, String list_date, int list_in, int list_out, int list_jan) {
+		super();
+		this.a_acc_no = a_acc_no;
+		this.list_date = list_date;
+		this.list_in = list_in;
+		this.list_out = list_out;
+		this.list_jan = list_jan;
+	}
+	public JoinVo(String a_acc_no, String type, String acc_s, String acc_e, int list_jan) {
+		super();
+		this.a_acc_no = a_acc_no;
+		this.type = type;
+		this.acc_s = acc_s;
+		this.acc_e = acc_e;
+		this.list_jan = list_jan;
+	}
 	public String getM_member_ID() {
 		return m_member_ID;
 	}
