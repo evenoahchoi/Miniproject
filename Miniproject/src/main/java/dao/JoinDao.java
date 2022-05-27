@@ -81,19 +81,12 @@ public class JoinDao {
 				vo.setT_type_idx(rs.getInt("t_type_idx"));
 				vo.setType(rs.getString("type"));
 				
-				
-
 				//list에 추가
-
 				list.add(vo);
-
 			}
-
 		} catch (Exception e) {
-			// TODO: handle exception
 			e.printStackTrace();
 		} finally {
-
 			try {
 				//연결(생성) 되었으면 닫아라.(생성 역순으로 닫기)
 				if (rs != null)
@@ -102,18 +95,15 @@ public class JoinDao {
 					pstmt.close(); // 2
 				if (conn != null)
 					conn.close(); // 1
-
 			} catch (SQLException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-
 		return list;
 	}
 	
 	//계좌번호로 통장내역을 조회하는 객체
-	public JoinVo list(int idx) {
+	public JoinVo list(JoinVo listVo) {
 
 		JoinVo vo = null;
 		Connection conn = null;
@@ -130,6 +120,7 @@ public class JoinDao {
 			pstmt = conn.prepareStatement(sql);
 
 			//3.pstmt셋팅
+			pstmt.setString(1, vo.getA_acc_no());
 			
 			//4.ResultSet얻어오기
 			rs = pstmt.executeQuery();

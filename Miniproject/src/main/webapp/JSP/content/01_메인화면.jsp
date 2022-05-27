@@ -55,11 +55,11 @@
 				
 				<c:forEach var="vo" items="${ list }">
 				<tr>
-					<td>더미 데이터</td>	
-					<td>더미 데이터</td>	
-					<td>더미 데이터</td>	
-					<td>더미 데이터</td>	
-					<td>더미 데이터</td>	
+					<td>${vo.a_acc_no}</td>	
+					<td>${vo.type}</td>	
+					<td>${vo.acc_s}</td>	
+					<td>${vo.acc_e}</td>	
+					<td>${vo.list_jan}</td>	
 
 					<td>
 						<input class="btn btn-info" type="button" value="입금" 
