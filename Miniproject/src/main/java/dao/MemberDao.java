@@ -93,6 +93,7 @@ public class MemberDao {
 	
 	
 	public int insert(MemberVo vo) {
+		
 		int res = 0;
 
 		Connection conn = null;
@@ -132,10 +133,9 @@ public class MemberDao {
 				e.printStackTrace();
 			}
 		}
-
 		return res;
-
 	}
+	
 	
 	public int delete(String member_ID) {
 		// TODO Auto-generated method stub

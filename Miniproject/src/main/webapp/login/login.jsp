@@ -51,7 +51,7 @@
 	$(function() {
 		$("#signup").click(function() {
 
-			window.location.href = 'my_signup.jsp';
+			window.location.href = 'login.jsp';
 
 		})
 	});
