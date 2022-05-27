@@ -111,4 +111,115 @@ public class JoinDao {
 
 		return list;
 	}
+	
+	//계좌번호로 통장내역을 조회하는 객체
+	public JoinVo list(int idx) {
+
+		JoinVo vo = null;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		String sql = "select a_acc_no,list_in,list_out,list_jan,list_date from full_view where a_acc_no=?";
+
+		try {
+			//1.Connection얻어오기
+			conn = DBService.getInstance().getConnection();
+
+			//2.PreparedStatment얻어오기 : SQL처리객체
+			pstmt = conn.prepareStatement(sql);
+
+			//3.pstmt셋팅
+			
+			//4.ResultSet얻어오기
+			rs = pstmt.executeQuery();
+
+			//5.포장(record->Vo)
+			if (rs.next()) {
+				//rs가 가리키는 행(레코드)의 값을 읽어온다
+				//Vo로 포장
+				vo = new JoinVo();
+
+				vo.setA_acc_no(rs.getString("a_acc_no"));
+				vo.setList_in(Integer.parseInt(rs.getString("list_in")));
+				vo.setList_out(Integer.parseInt(rs.getString("list_out")));
+				vo.setList_jan(Integer.parseInt(rs.getString("list_jan")));
+				vo.setList_date(rs.getString("list_date"));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+
+			try {
+				//연결(생성)되었으면 닫아라(생성역순으로)
+				if (rs != null)
+					rs.close(); //3 
+				if (pstmt != null)
+					pstmt.close();//2
+				if (conn != null)
+					conn.close(); //1
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return vo;
+	}
+	
+	//member_ID가 가진 통장내역 모두 보여주기 (메인화면)
+	public JoinVo member_acc(int idx) {
+
+		JoinVo vo = null;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+
+		String sql = "select a_acc_no,type,acc_s,acc_e,list_jan from full_view where m_member_ID=?";
+
+		try {
+			//1.Connection얻어오기
+			conn = DBService.getInstance().getConnection();
+
+			//2.PreparedStatment얻어오기 : SQL처리객체
+			pstmt = conn.prepareStatement(sql);
+
+			//3.pstmt셋팅
+
+			//4.ResultSet얻어오기
+			rs = pstmt.executeQuery();
+
+			//5.포장(record->Vo)
+			if (rs.next()) {
+				//rs가 가리키는 행(레코드)의 값을 읽어온다
+				//Vo로 포장
+				vo = new JoinVo();
+
+				vo.setA_acc_no(rs.getString("a_acc_no"));
+				vo.setType(rs.getString("type"));
+				vo.setAcc_s(rs.getString("acc_s"));
+				vo.setAcc_e(rs.getString("acc_e"));
+				vo.setList_jan(Integer.parseInt(rs.getString("list_jan")));
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		} finally {
+
+			try {
+				//연결(생성)되었으면 닫아라(생성역순으로)
+				if (rs != null)
+					rs.close(); //3 
+				if (pstmt != null)
+					pstmt.close();//2
+				if (conn != null)
+					conn.close(); //1
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return vo;
+	}
+	
 }
