@@ -47,6 +47,6 @@ public class SignUpListAction extends HttpServlet {
 		int res = MemberDao.getInstance().insert(vo);
 		
 		//갱신된 정보 재요청
-		response.sendRedirect("index.jsp");
+		response.sendRedirect("../JSP/index.jsp");
 	}
 }
