@@ -25,6 +25,7 @@
 
 
 <script type="text/javascript">
+	
 	function send(f) {
 
 		//필수 입력 항목
@@ -187,9 +188,9 @@
 		}
 		
 		// ===================================================
-		//전송방식
 		
-		f.action = "sign_up.do";
+		//전송대상
+		f.action = "join_insert.do";
 		
 		//전송
 		f.submit();
@@ -241,9 +242,7 @@
 			<div class="panel-body">
 				<!-- table -->
 
-				<form action="">
-
-
+				<form> 
 					<table style="margin: auto;">
 						<!-- 아이디 -->
 						<tr>
@@ -297,12 +296,12 @@
 						<tr>
 							<th>
 								<input type="text" class="form-control" name="email1" id="email">
-								@ 
+								@
 								<input type="text" class="form-control" name="email2" id="email">
 							</th>
 
 							<td>
-								<!-- jQuery써서 funtion만들기 -->
+								<!-- jQuery써서 function만들기 -->
 								<button type="button" class="btn btn-default"
 									style="margin-bottom: 10px; margin-left: 10px;">중복확인</button>
 
@@ -335,7 +334,6 @@
 							</td>
 						</tr>
 
-
 					</table>
 				</form>
 
@@ -346,5 +344,3 @@
 
 </body>
 </html>
-
-
