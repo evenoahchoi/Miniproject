@@ -40,7 +40,7 @@ public class LoginListAction extends HttpServlet {
 			
 		}else { //로그인 성공시
 			
-			RequestDispatcher disp = request.getRequestDispatcher("../JSP/index.jsp");
+			RequestDispatcher disp = request.getRequestDispatcher("../JSP/index_login.jsp");
 			disp.forward(request, response);
 		
 		}
