@@ -12,12 +12,13 @@
 	
 	$(function() {
 		
-		if
-		
-		$("#account_box1").hide();
+		/* $("#account_box1").hide(); */
 		
 	});
 
+	
+	<
+	
 
 </script>
 
@@ -27,11 +28,14 @@
 	width: 200px;
 	height: 100px;
 	border: 1px;
+	margin-bottom: 5px;
+}
+	
+	.img {
+	cursor: pointer;
+	border: 1px solid gray;
 }
 
-a {
-	text-decoration: none;
-}
 </style>
 
 
@@ -39,13 +43,13 @@ a {
 <body>
 	<div style="margin-top: 100px;">
 		<div id="account_box1">
-			<a id="">1.보통예금 개설하기</a><br>
+			<img class="img" onclick="location.href='index.jsp'" src="../img/보통예금.png"><br>
 		</div>
 		<div id="account_box2">
-			<a onclick="">2.정기적금 개설하기</a><br>
+			<img class="img" onclick="location.href='index.jsp'" src="../img/정기예금.png"><br>
 		</div>
 		<div id="account_box3">
-			<a onclick="">3.정기예금 개설하기</a><br>
+			<img class="img" onclick="location.href='index.jsp'" src="../img/정기적금.png"><br>
 		</div>
 	</div>
 </body>
