@@ -49,12 +49,12 @@
 		//아이디 유효성 검사
 		 var idRegCheck = /^[a-zA-Z0-9]{1,10}$/; 
 
-		if(!idRegCheck.test(member_ID)){
+/* 		if(!idRegCheck.test(member_ID)){
 			alert('ID는 영문자와 숫자 1~10자리로 입력하실 수 있습니다.');
 			f.member_ID.value = '';
 			f.member_ID.focus();
 			return;
-		}
+		} */
 		 
 
 		//비밀번호 체크
@@ -64,21 +64,21 @@
 			f.m_pwd.focus();
 			return;
 		}
-		if (pwd_check == '') {
+/* 		if (pwd_check == '') {
 			alert('비밀번호를 "재확인"하세요.');
 			f.pwd_check.value = '';
 			f.pwd_check.focus();
 			return;
-		}
+		} */
 		
 
 		//비밀번호확인 체크
-		if (m_pwd != pwd_check) {
+/* 		if (m_pwd != pwd_check) {
 			alert('두 비밀번호가 일치하지 않습니다.');
 			f.pwd_check.value = '';
 			f.pwd_check.focus();
 			return;
-		}
+		} */
 		
 		var korRegCheck = /[ㄱ-ㅎㅏ-ㅣ가-힣]/;
 		
@@ -90,32 +90,24 @@
 			return;
 		}
 		
-		if(!korRegCheck.test(m_name)){
+/* 		if(!korRegCheck.test(m_name)){
 			alert('이름은 한글만 입력가능합니다.');
 			f.m_name.value = '';
 			f.m_name.focus();
 			return;
-		}
+		} */
 		
-		
+
 	
+		var mailRegCheck = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+		
+		
 		if(email1 == ''){
 			alert('메일를 주소를 입력하세요.');
 			f.email1.value = '';
 			f.email1.focus();
 			return;
 		}
-		
-		var mailRegCheck = /^[a-zA-Z0-9]{1,}$/; 
-		
-		
-		if(!mailRegCheck.test(email1)){
-			alert('메일은 영문자와 숫자로만 입력 가능합니다.');
-			f.email1.value = '';
-			f.email1.focus();
-			return;
-		}
-		
 		
 		
 		if(email2 == ''){
@@ -126,18 +118,35 @@
 		}
 		
 		
-		if(!mailRegCheck.test(email2)){
-			alert('메일은 영문자와 숫자로만 입력 가능합니다.');
+		var m_email = email1+'@'+email2;
+		
+		
+/* 		if(!mailRegCheck.test(m_email)){
+		
+			alert('메일 형식이 잘못되었습니다. 다시 입력해주세요.');
+			f.email1.value='';
+			f.email2.value='';
+			f.email1.foucus();
+			return;
+		} */
+		
+		
+		
+ 	/* 	if(!mailRegCheck2.test(email2)){
+			alert('메일은 영문자와 숫자, '.' 입력 가능합니다.');
 			f.email2.value = '';
 			f.email2.focus();
 			return;
-		}
+		} */ 
 
  		var telRegCheck = /^[0-9]{3}$/;
 		var telRegCheck2 = /^[0-9]{4}$/;
 		
 		//전화번호 입력 체크
 		if (tel1 == '') {
+			
+			
+			
 			alert('첫번째 전화번호를 입력하세요.');
 			f.tel1.value = '';
 			f.tel1.focus();
@@ -146,12 +155,12 @@
 			
 		}
 		
-		if (!telRegCheck.test(tel1)) {
+/* 		if (!telRegCheck.test(tel1)) {
 			alert('3자리 숫자만 입력하세요');
 			f.tel1.value = '';
 			f.tel1.focus();
 			return;
-		}
+		} */
 		
 		// 2번째
 		if (tel2 == '') {
@@ -163,12 +172,12 @@
 			
 		}
 		
-		if (!telRegCheck2.test(tel2)) {
+/* 		if (!telRegCheck2.test(tel2)) {
 			alert('4자리 숫자만 입력하세요');
 			f.tel2.value = '';
 			f.tel2.focus();
 			return;
-		}
+		} */
 
 		// 3번째
 		if (tel3 == '') {
@@ -180,12 +189,12 @@
 			
 		}
 		
-		if (!telRegCheck2.test(tel3)) {
+/* 		if (!telRegCheck2.test(tel3)) {
 			alert('4자리 숫자만 입력하세요');
 			f.tel3.value = '';
 			f.tel3.focus();
 			return;
-		}
+		} */
 		
 		// ===================================================
 		

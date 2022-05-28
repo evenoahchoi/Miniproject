@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <!DOCTYPE html>
 <html>
@@ -97,9 +97,14 @@
 								id="input_box"></th>
 						</tr>
 						<tr>
-							<th><button type="button" class="w3-button w3-blue"
-									onclick="login(this.form);">로그인</button>
-								<button type="button" class="w3-button w3-blue" id="signup">회원가입</button></th>
+							<th>
+								<div align="center">
+									<button type="button" class="w3-button w3-blue"
+										onclick="login(this.form);">로그인</button>
+									<button type="button" class="w3-button w3-blue" id="signup">회원가입</button>
+
+								</div>
+							</th>
 						</tr>
 					</table>
 				</form>
