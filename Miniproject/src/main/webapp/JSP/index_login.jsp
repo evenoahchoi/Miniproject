@@ -25,7 +25,7 @@
 	
 	<div id="main_box">
 		<div id="header_upper">
-		<%@ include file="header/header_upper.jsp" %>
+		<%@ include file="header/header_upper_login.jsp" %>
 		<hr>
 		</div>	
 		<div id="header_lower">
@@ -38,10 +38,9 @@
 		<hr>
 			<div id="content1"></div>
 			
-			<div id="main">
-			<%@ include file="content/06_로그인전메인화면.jsp" %>
+			<div>
+			<%@ include file="content/01_메인화면.jsp" %>
 			</div>
-			<div id="main2"></div>
 			
 		</div>		
 		<div id="footer">footer</div>		
