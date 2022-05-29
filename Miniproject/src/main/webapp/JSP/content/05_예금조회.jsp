@@ -19,7 +19,7 @@
 	값이 없으면 출력하지 않기
 	</c:if>
 
-		<div style="width: 70%; margin: auto;">
+		<div style="width: 100%; margin: auto;">
 			<h4 style="text-align: center">계좌번호출력</h4>
 
 			<table class="table">

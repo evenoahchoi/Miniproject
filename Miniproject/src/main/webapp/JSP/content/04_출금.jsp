@@ -22,7 +22,7 @@
 			</tr>
 			<tr>
 				<th>출금하실 금액</th>
-				<td><input type="text" name="minus" value=""></td>
+				<td><input type="text" name="list_out" ></td>
 			</tr>
 
 

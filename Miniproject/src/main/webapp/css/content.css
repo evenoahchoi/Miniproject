@@ -2,21 +2,20 @@
 
 #main{
 	
-	
-	
-	
-	width: 50%;
+	width: 60%;
 	height: 50%;
-	margin: auto;
+	margin-left: 40px;
+	float: left;
+	
 	
 }
 #main2{
 	
-
+	margin-top: 50px;
+	float: right;
+	width: 25%;
+	height: 150px;
 	
-	width: 100px;
-	height: 100px;
-	
-	
+	background-color: gray;
 }
 

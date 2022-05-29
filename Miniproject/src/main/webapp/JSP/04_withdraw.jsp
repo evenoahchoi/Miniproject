@@ -36,10 +36,12 @@
 		<div id="content">
 		<hr>
 			<div id="content1"></div>
-			<div>
+			<div id="main">
 				<%@ include file="content/04_출금.jsp" %> 
 			</div>
+			<div id="main2">
 			
+			</div>
 		</div>		
 		<div id="footer">footer</div>		
 	</div>

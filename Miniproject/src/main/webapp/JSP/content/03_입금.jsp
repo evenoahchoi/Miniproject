@@ -22,7 +22,7 @@
 			</tr>
 			<tr>
 				<th>입금하실 금액</th>
-				<td><input type="text" name="plus" value=""></td>
+				<td><input type="text" name="list_in" ></td>
 			</tr>
 
 
