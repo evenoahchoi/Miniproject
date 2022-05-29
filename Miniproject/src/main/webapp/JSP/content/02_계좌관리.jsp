@@ -43,6 +43,7 @@
 <body>
 	<div style="margin-top: 100px;">
 		<div id="account_box1">
+			<!-- 여기서 이미지 태그를 누르면 통장개설되는 서블릿으로 이동 -->
 			<img class="img" onclick="location.href='index.jsp'" src="../img/보통예금.png"><br>
 		</div>
 		<div id="account_box2">

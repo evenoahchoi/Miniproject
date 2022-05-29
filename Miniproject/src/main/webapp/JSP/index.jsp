@@ -41,7 +41,9 @@
 			<div id="main">
 			<%@ include file="content/06_로그인전메인화면.jsp" %>
 			</div>
-			<div id="main2"></div>
+			<div id="main2">
+			
+			</div>
 			
 		</div>		
 		<div id="footer">footer</div>		

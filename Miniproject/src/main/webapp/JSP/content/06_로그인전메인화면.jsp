@@ -51,15 +51,15 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="../img/test1.png" onclick="log_alert();" alt="Los Angeles" style="width:100%;">
+        <img src="../img/main1.png" onclick="log_alert();" alt="화면1" style="width:100%;">
       </div>
 
       <div class="item">
-        <img src="../img/test2.png" onclick="log_alert();" alt="Chicago" style="width:100%;">
+        <img src="../img/main2.png" onclick="log_alert();" alt="화면2" style="width:100%;">
       </div>
     
       <div class="item">
-        <img src="../img/test3.png" onclick="log_alert();" alt="New york" style="width:100%;">
+        <img src="../img/main3.png" onclick="log_alert();" alt="화면3" style="width:100%;">
       </div>
     </div>
 

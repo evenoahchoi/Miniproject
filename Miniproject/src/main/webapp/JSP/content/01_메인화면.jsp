@@ -23,7 +23,7 @@
 <style type="text/css">
 	#table_box{
 		margin-top: 80px;
-		margin-left: 150px;
+		margin-left: 60px;
 		height: 80%;
 
 	}
@@ -36,7 +36,7 @@
 <body>
 	<div id="table_box">
 
-			<table  width="80%">
+			<table  width="100%">
 				<tr>
 					<th width="20%">계좌번호</th>
 					<th width="10%">통장종류</th>
